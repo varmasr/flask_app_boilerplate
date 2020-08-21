@@ -1,9 +1,13 @@
 from flask import Flask
+from flask_restful import Api
 from database.db import initialize_db
 from resources.movie import movies
+from resources.routes import initialize_routes
+
 
 
 app = Flask(__name__)
+api = Api(app)
 
 # movies =  [
 #     {
@@ -24,7 +28,8 @@ app.config['MONGODB_SETTINGS'] = {
 
 initialize_db(app)
 
-app.register_blueprint(movies)
+#app.register_blueprint(movies)
+initialize_routes(api)
 
 
 app.run(debug=True)
