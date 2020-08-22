@@ -2,15 +2,19 @@ from flask import Flask
 from flask_restful import Api
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
+from flask_mail import Mail
 
 from database.db import initialize_db
 from resources.movie import movies
-from resources.routes import initialize_routes
+from resources.errors import errors
 
 
 
 app = Flask(__name__)
-api = Api(app)
+api = Api(app, errors=errors)
+mail = Mail(app)
+
+from resources.routes import initialize_routes
 
 # movies =  [
 #     {
@@ -37,7 +41,8 @@ initialize_db(app)
 #app.register_blueprint(movies)
 initialize_routes(api)
 bcrypt = Bcrypt(app)
+
 jwt = JWTManager(app)
 
 
-app.run(debug=True)
+#app.run(debug=True)

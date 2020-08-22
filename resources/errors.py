@@ -19,6 +19,12 @@ class MovieNotExistsError(Exception):
 class EmailAlreadyExistsError(Exception):
     pass
 
+class EmailDoesNotExistError(Exception):
+    pass
+
+class BadTokenError(Exception):
+    pass
+
 class UnauthorizedError(Exception):
     pass
 
@@ -51,6 +57,14 @@ errors = {
          "message": "User with given email address already exists",
          "status": 400
      },
+     "EmailDoesNotExistError": {
+         "message": "User with given email does not exist",
+         "status": 400
+     },
+     "BadTokenError": {
+         "message": "Invalid token",
+         "status": 403
+      },
      "UnauthorizedError": {
          "message": "Invalid username or password",
          "status": 401
