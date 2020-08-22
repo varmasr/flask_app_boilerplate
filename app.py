@@ -29,9 +29,9 @@ from resources.routes import initialize_routes
 #     }
 # ]
 
-app.config['MONGODB_SETTINGS'] = {
-    'host' : 'mongodb://localhost/movie-bag'
-}
+#app.config['MONGODB_SETTINGS'] = {
+#    'host' : 'mongodb://localhost/movie-bag'
+#}
 
 app.config.from_envvar('ENV_FILE_LOCATION')
 
