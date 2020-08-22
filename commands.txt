@@ -1,0 +1,18 @@
+git push -u origin master
+git commit -m "added testing - unittest"
+git status
+
+
+
+python -m unittest --buffer
+python -m unittest tests\test_signup.py
+
+
+set ENV_FILE_LOCATION=.\.env.test
+echo %ENV_FILE_LOCATION%
+
+
+python runapp.py
+
+
+pip install flask-mail
