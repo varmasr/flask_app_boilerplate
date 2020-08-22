@@ -1,5 +1,7 @@
 from flask import Flask
 from flask_restful import Api
+from flask_bcrypt import Bcrypt
+
 from database.db import initialize_db
 from resources.movie import movies
 from resources.routes import initialize_routes
@@ -30,6 +32,7 @@ initialize_db(app)
 
 #app.register_blueprint(movies)
 initialize_routes(api)
+bcrypt = Bcrypt(app)
 
 
 app.run(debug=True)

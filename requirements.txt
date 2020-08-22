@@ -4,13 +4,16 @@ aniso8601           8.0.0
 appdirs             1.4.4
 astroid             2.3.3
 backcall            0.1.0
+bcrypt              3.2.0
 certifi             2020.6.20
+cffi                1.14.2
 click               7.1.2
 colorama            0.4.3
 decorator           4.4.2
 distlib             0.3.1
 filelock            3.0.12
 Flask               1.1.2
+Flask-Bcrypt        0.7.1
 flask-mongoengine   0.9.5
 Flask-RESTful       0.3.8
 Flask-WTF           0.14.3
@@ -32,6 +35,7 @@ pickleshare         0.7.5
 pip                 20.2.2
 pipenv              2020.8.13
 prompt-toolkit      3.0.4
+pycparser           2.20
 Pygments            2.6.1
 pylint              2.4.4
 pylint-flask        0.6
